@@ -1,0 +1,14 @@
+{
+  "time": "2019-04-04T07:02:37.879Z",
+  "service": "Command Processor",
+  "environment": "development",
+  "host": "N/A",
+  "status": {
+    "db": {
+      "status": "OK"
+    },
+    "overall": "OK"
+  },
+  "build": "143ac879\n0.0.0-3154\n",
+  "duration": 25
+}
