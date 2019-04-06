@@ -1,0 +1,47 @@
+How To Use
+================================
+
+This program can be used by running server.py.
+In its current configuration, the program will start a web server that will bind to 127.0.0.1:5000
+The server has two endpoints:
+/health_status  - to retrieve the current overall health of each of the health check configured
+/availability   - to retrieve the availability statistics of each of the health check configured up to 1 hour
+
+Prerequisites
+================================
+To run the server the requirements in requirements/requirements.txt should be installed
+To test the code the requirements in requirements/requirements_dev.txt should be installed
+
+
+
+Health Checkers
+================================
+A collection of modules and classes to assist in gathering data and statistics on health check of other services
+
+health_checker.py
+--------------------------------
+This class will enable the user to gather health check statistics on a target service, or immediately check that status
+of said service
+
+activate_health_checks.py
+--------------------------------
+This class is responsible for activating all available health checks present in health_checkers_configuration, and
+schedule an interval check by the interval configured in health_checkers_constants
+
+
+Data Fetchers
+================================
+This classes are responsible to get data from a target source. Currently only one real source is defined which is an
+external url
+
+
+Response Parsers
+================================
+Response parsers are classes which are able to take a health check response and extract the status for the overall
+health status
+
+
+
+Additional Possible Improvements
+================================
+When checking the health status for all the targets, parallelize the calls to speed up the response
